@@ -37,7 +37,7 @@ function update(direction) {
    clearInterval(timer)
    timer = setInterval(() => {
         update(1)
-    }, 3000); 
+    }, 6000); 
 
 
 

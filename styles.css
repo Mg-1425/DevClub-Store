@@ -78,6 +78,7 @@ header nav ul li:hover::after {
     filter: blur(50px);
     z-index: 1;
     animation: pulse 4s infinite alternate;
+    pointer-events: none;
 }
 
 @keyframes pulse {
@@ -220,12 +221,17 @@ header nav ul li:hover::after {
     cursor: pointer;
     border: none;
     overflow: hidden;
-    transition: all 0.4s ease;
 
-        /* ANIMAÇÃO */
+    /* Estado inicial da animação */
     transform: translateX(200px);
     opacity: 0;
-    transition: transform 0.6s ease, opacity 0.6s ease;
+
+    /* Transições organizadas corretamente */
+    transition: 
+        transform 0.6s ease,
+        opacity 0.6s ease,
+        box-shadow 0.4s ease;
+
     transition-delay: 0.5s;
 }
 
@@ -234,8 +240,9 @@ header nav ul li:hover::after {
     opacity: 1;
 }
 
+/* HOVER CORRIGIDO */
 .btn:hover {
-    transform: translateY(-3px) scale(1.05);
+    transform: translateX(0) translateY(-3px) scale(1.05);
     box-shadow: 0 0 20px #00f7ff;
 }
 
@@ -259,7 +266,6 @@ header nav ul li:hover::after {
 .btn:hover::after {
     left: 130%;
 }
-
 .arrows {
     position: absolute;
     width: 90%;
